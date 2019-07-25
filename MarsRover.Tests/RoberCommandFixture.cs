@@ -22,5 +22,15 @@ namespace MarsRover.Tests
                 position = _command.GetUpdatedPositionOnExecutingCommand(instruction, position);
             position.Should().BeEquivalentTo(new RoverPosition(2, 2, Directions.South));
         }
+
+        [Fact]
+        public void Given_series_of_instruction_should_return_valid_position_test2()
+        {
+            var position = new RoverPosition(2, 3, Directions.NorthEast);
+            var instructionList = new char[] { 'L', 'L', 'M' ,'R'};
+            foreach (var instruction in instructionList)
+                position = _command.GetUpdatedPositionOnExecutingCommand(instruction, position);
+            position.Should().BeEquivalentTo(new RoverPosition(1, 2, Directions.NorthWest));
+        }
     }
 }

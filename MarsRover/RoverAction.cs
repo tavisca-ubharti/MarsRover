@@ -19,6 +19,22 @@
                 case Directions.North:
                     newPosition.YCoordinate += 1;
                     break;
+                case Directions.NorthEast:
+                    newPosition.XCoordinate += 1;
+                    newPosition.YCoordinate += 1;
+                    break;
+                case Directions.SouthWest:
+                    newPosition.XCoordinate -= 1;
+                    newPosition.YCoordinate -= 1;
+                    break;
+                case Directions.SouthEast:
+                    newPosition.XCoordinate += 1;
+                    newPosition.YCoordinate -= 1;
+                    break;
+                case Directions.NorthWest:
+                    newPosition.XCoordinate -= 1;
+                    newPosition.YCoordinate += 1;
+                    break;
             }
             if (IsNotValidPositionOnMap(newPosition))
                 return position;
@@ -57,6 +73,18 @@
                 case Directions.North:
                     position.CurrentDirection = Directions.East;
                     break;
+                case Directions.NorthEast:
+                    position.CurrentDirection = Directions.SouthEast;
+                    break;
+                case Directions.SouthWest:
+                    position.CurrentDirection = Directions.NorthWest;
+                    break;
+                case Directions.SouthEast:
+                    position.CurrentDirection = Directions.SouthWest;
+                    break;
+                case Directions.NorthWest:
+                    position.CurrentDirection = Directions.NorthEast;
+                    break;
             }
             return position;
         }
@@ -76,6 +104,18 @@
                     break;
                 case Directions.North:
                     position.CurrentDirection = Directions.West;
+                    break;
+                case Directions.NorthEast:
+                    position.CurrentDirection = Directions.NorthWest;
+                    break;
+                case Directions.SouthWest:
+                    position.CurrentDirection = Directions.SouthEast;
+                    break;
+                case Directions.SouthEast:
+                    position.CurrentDirection = Directions.NorthEast;
+                    break;
+                case Directions.NorthWest:
+                    position.CurrentDirection = Directions.SouthWest;
                     break;
             }
             return position;

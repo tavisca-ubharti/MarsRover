@@ -5,6 +5,10 @@
         East = 'E',
         West = 'W',
         North='N',
-        South='S'
+        South='S',
+        NorthEast='e',
+        SouthEast='s',
+        NorthWest='n',
+        SouthWest='w'
     }
 }
